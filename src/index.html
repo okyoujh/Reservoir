@@ -1,1 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>경기도 저수지 현황</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 20px; }
+    h1 { margin-bottom: 6px; }
+    .meta { color:#555; margin-bottom: 12px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border-bottom: 1px solid #eee; padding: 8px 10px; text-align: left; }
+    th { cursor: pointer; user-select: none; }
+    tr:hover { background: #fafafa; }
+    .badge { display:inline-block; padding:2px 6px; border-radius: 6px; background:#f1f5f9;}
+  </style>
+</head>
+<body>
+  <h1>경기도 저수지 현황 <span class="badge">OpenAPI(일 1회)</span></h1>
+  <div class="meta">
+    기준일: <span id="date"></span> · 출처: 행안부 재난안전데이터 공유플랫폼
+  </div>
+
+  <label>조회일
+    <input type="date" id="datePicker" />
+  </label>
+  <button id="reload">불러오기</button>
+
+  <table id="tbl">
+    <thead>
+      <tr>
+        <th data-key="sigungu">시군</th>
+        <th data-key="reservoirCnt">저수지수</th>
+        <th data-key="effRsvrQty">유효저수량(㎥)</th>
+        <th data-key="nowRsvrQty">현재저수량(㎥)</th>
+        <th data-key="nowRsvrRate">현재저수율(%)</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="./client.js"></script>
+</body>
+</html>
 
